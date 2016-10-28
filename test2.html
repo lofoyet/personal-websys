@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>test</title>
+<style type="text/css">
+body{
+	font-family: Arial;
+	font-size: 16px;
+	font-style: normal;
+	color: #000000;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	margin-bottom:0;
+    }
+ul.nb {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 180px;
+    background-color: #008ae6;
+	color: #FFFFFF;
+    height: 100%; /* Full height */
+    position: fixed; /* Make it stick, even on scroll */
+    overflow: auto; /* Enable scrolling if the sidenav has too much content */
+}
+
+li a {
+    display: block;
+    color: #FFFFFF;
+    padding: 8px 16px;
+    text-decoration: none;
+	text-transform: uppercase;
+	font-family: Arial;
+
+	letter-spacing: -1px;
+}
+a.nb{
+	color:white;
+    text-decoration: none;
+	display: block;
+
+}
+li a.active {
+    background-color: #006bb3;
+    color: white;
+}
+
+/* Change the link color on hover */
+li a:hover {
+    background-color: #1aa3ff;
+    color: white;
+}
+
+
+
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+</head>
+
+<body>
+<ul class="nb">
+	<li><a class="nb" href="hw3.html"><i class="fa fa-compass"></i> Home page</a></li>
+	<li><a href="#" id="showhide"><em class="fa fa-heart"></em> Personal info</a></li>
+	<li><a id="showhide2" href="#"><em class="fa fa-book"></em> List of courses</a></li>
+	<li><a href="#" id="showhide3"><em class="fa fa-cubes"></em> Resources</a></li>
+</ul>
+ <!-- the first part of the div -->
+
+<div id="toggleMe" style="margin-left:180px;display:none;">
+
+<table style="color:#FFFFFF;background-color:#002e4d;height:250px;width:100%">
+	<tr>
+		<td style="padding:70px;">
+        	<p style="font-size:50px;font-weight: bold;margin-bottom:15px">Tianpei Liu</p>
+            <div style="height:3px;width:85px;background-color:#99d6ff"></div>
+            <p style="font-size:20px;margin-top:15px;font-family:Palatino Linotype;">Data Analyst</p>
+            
+        </td>
+
+	</tr>
+</table>
+
+
+
+<table style="width:100%;">
+  <tr>
+
+    <td valign="top" style="width:60%;padding:35px;font-size:20px">
+    <div style="background-color:#FFFFFF"><div style="padding:35px;line-height: 2;">
+    My name is Tianpei Liu, I joined New York University as a master student in economics department. I enjoy meeting new people and finding ways to help them have an uplifting experience. I worked as a research assistant in <a href="http://casseng.cssn.cn/" title="workplace">
+CASS</a> before. <a href="http://english.pku.edu.cn/" title="see my school">
+Peking Univeristy(北京大学)</a> is where I received my college degree. She is very <a href="http://www.smartinternchina.com/resources/internship-resources/236-education-in-china" title="see pictures">
+beautiful</a> and prestigious. <br><br><div id="txt" style="text-decoration: underline;"></div>
+    <p >I am a huge fan of LeBron James and Cleveland Cavaliers, before this, I am a big fan of Steve Nash. If you happen to share the same love with me, let's enjoy NBA together!</p>
+    
+    <b><a href="https://www.reddit.com/r/nba" title="NBA?NFL?">
+	Come and watch together<br></a></b>
+    <p> At the same time, I am interested in doing analysis in R and Python, with a lot of statistical techniques.</p>
+    
+	<b><a href="https://github.com/youhealthy" title="Python?R?">
+	Come and code together<br></a></b>
+
+   
+     </div></div>
+     
+     
+    </td>
+    <td style="width:29%;padding:35px">
+    	<div style="background-color:#006bb3;width:459px;font-family:Impact;font-size:16px">
+        <a href="https://www.linkedin.com/in/liutianpeitonynyu" title="this is me, click to know more">
+		<img border="0" alt="I am down, click to see more" src="1.jpg" width="100%" height="35%" class=""></a>
+        <br>
+        <div style="color:#bfbfbf;font-size:26px;padding-right:35px;padding-left:35px;padding-top:20px;padding-bottom:35px">
+        <p style="color:white;font-family:Helvetica;font-weight:bold">CONTACT</p> 
+               
+		<a href="https://www.linkedin.com/in/liutianpeitonynyu">
+        <font style="color:#bfbfbf;"><i id="connect" class="fa fa-linkedin" aria-hidden="true"></i></font></a>  
+        &nbsp&nbsp&nbsp
+        <a href="tl1848@nyu.edu">
+        <font style="color:#bfbfbf;"><i id="connect1" class="fa fa-envelope" aria-hidden="true"></i></font></a>
+        &nbsp&nbsp&nbsp
+        <a href="http://econ.as.nyu.edu/page/home" title="this is me, click to know more">
+        <font style="color:#bfbfbf;"><i id="connect2" class="fa fa-location-arrow" aria-hidden="true"></i></font></a>
+        &nbsp&nbsp&nbsp
+        <a href="resume-2016c-TianpeiLiu.pdf" ><font style="color:#bfbfbf;"><p id="connect3" style="display:inline">Vita</p>
+        	</font>
+        </a>
+        &nbsp&nbsp&nbsp
+        <font style="color:#bfbfbf;"><i id="connect4" class="fa fa-twitter" aria-hidden="true"></i></font>
+        &nbsp&nbsp&nbsp
+        <font style="color:#bfbfbf;"><i id="connect5" class="fa fa-facebook-square" aria-hidden="true"></i></font>
+        <br></div>
+       	
+        </div>
+        
+	</td>
+  </tr>
+  </table>
+  
+</div>
+
+<div id="toggleMe2" style="margin-left:180px;padding:15px;display:none;">
+    <p id="rcorners2">
+        <table>
+        <tr>
+            <td width="30%">
+            <a href="http://pages.stern.nyu.edu/~nwhite/DealingwithdataUG.pdf" title="to see syllabus">
+            <u><strong><font style="font-size:20;color:#008ae6">Dealing with Data</font></strong></u><br></a><br>
+            <img border="0" alt="I am down, click to see more" src="data.jpg" width="150" height="87" class="">
+            </td>
+            
+            <td>
+             Data acquisition, data cleaning and formatting, common data formats, data representation and storage, data transformations, data base management systems, “big data” or nosql solutions for storing and analyzing data, common analysis tools including excel, sas and matlab, data mining and data visualization.<br><br>
+             <a href="http://www.forbes.com/sites/gilpress/2013/05/28/a-very-short-history-of-data-science/#3a0f460469fd" title="on history of data science">
+            <u><strong><font style="font-size:16;color:#66c2ff">More info</font></strong></u><br></a>
+            
+            </td>
+        </tr></table>
+    </p>
+
+</div>
+    
+<div id="toggleMe3" style="margin-left:180px;display:block;">
+        <a href="https://www.timeout.com/newyork/events-calendar/october-events-calendar" title="hh" style="margin-left:180px">what to do in NYC?</a><br>
+        
+        <video width="540" height="360" controls style="margin:20px">
+            <source src="ac.mp4" type="video/mp4">
+            </source>
+        </video>
+</div>
+
+<script> 
+            changeDisplayState = function (id) {
+                var e2 = document.getElementById('toggleMe2'),
+					e3 = document.getElementById('toggleMe3'),
+                    e1 = document.getElementById(id);
+                if (e1.style.display === 'none' || e1.style.display === '') {
+                    e1.style.display = 'block';
+					e2.style.display = 'none';
+					e3.style.display = 'none';
+                } 
+            };
+            document.getElementById('showhide').onclick = function () {
+                changeDisplayState('toggleMe');
+                return false;
+            };
+</script>
+<script>
+			changeDisplayState2 = function (id) {
+                var e1 = document.getElementById('toggleMe'),
+                    e2 = document.getElementById(id);
+					e3 = document.getElementById('toggleMe3');
+                if (e2.style.display === 'none' || e2.style.display === '') {
+                    e2.style.display = 'block';
+					e1.style.display = 'none';	
+					e3.style.display = 'none';					
+                } 
+            };
+            document.getElementById('showhide2').onclick = function () {
+                changeDisplayState2('toggleMe2');
+                return false;
+            };
+</script>
+
+<script>
+			changeDisplayState3 = function (id) {
+                var e1 = document.getElementById('toggleMe'),
+					e2 = document.getElementById('toggleMe2'),
+                    e3 = document.getElementById(id);
+                if (e3.style.display != 'block') {
+                    e3.style.display = 'block';
+					e2.style.display = 'none';	
+					e1.style.display = 'none';					
+                } 
+            };
+            document.getElementById('showhide3').onclick = function () {
+                changeDisplayState3('toggleMe3');
+                return false;
+            };
+</script>
+	
+
+</body>
+</html>

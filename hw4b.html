@@ -1,0 +1,311 @@
+<!doctype html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<title>Tic Tac Toe</title>
+
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" type="text/css" href="hw4.css">
+<link href="http://fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript">
+var friend;
+/* the ppk game alert */
+function ppk_cmup(){
+	alert("this game is still under development, try the other one");
+}
+
+function show_pt(pattern){
+	$("#frie").html(pattern);
+}
+
+/* this is to check against whom the players are willing to play */
+function play_against_whom() {
+	msg = "You wanna play against your friend? If not and want to play against AI, click no";
+	friend = confirm(msg);
+
+		if (friend){
+			$("#bg_home").animate({top: "-100%"},500);
+			$("#bg_play").fadeIn(1500);
+			$("#back_to").fadeIn(1500);
+			$("#frie").fadeIn(1500);
+		} else {
+			$("#bg_home").animate({top: "-100%"},500);
+			$("#bg_play").fadeIn(1500);
+			$("#back_to").fadeIn(1500);
+			$("#frie").fadeIn(1500);
+		}
+	TicTacToe.init();
+	
+}
+
+/* hide bg page*/
+$(document).ready(function(){
+	"use strict";
+    $("#ttt").click(function(){
+		play_against_whom();
+    });
+	$("#back_to").click(function(){
+        $("#bg_home").animate({top: "0"},500);
+		$("#bg_play").fadeOut(500);
+		$("#back_to").fadeOut(500);
+		setTimeout(function(){TicTacToe.init();},500);
+	});	
+});
+
+var TicTacToe = {
+
+	/* If the same symbol is present in these pairs, that player has won */
+
+	winning_squares: [	
+		["0", "1", "2"],
+		["3", "4", "5"],
+		["6", "7", "8"],
+		["0", "3", "6"],
+		["0", "4", "8"],
+		["1", "4", "7"],
+		["2", "5", "8"],
+		["2", "4", "6"]],
+
+	init: function() {
+		/* Draw the board */
+        /* Start the container off as empty, then add squares to id */
+		$("#container").html('');
+                /* create the square for each row, and give them an id of 0 to 8 */
+		for (i = 0; i < 9; i++) {
+			if (friend){
+				$("#container").append("<div id=" + i + " onclick='TicTacToe.clicked_dp_1(this.id)' class='square'></div>");
+			} else {
+				$("#container").append("<div id=" + i + " onclick='TicTacToe.clicked(this.id)' class='square'></div>");
+			}
+                /* Only put 3 squares on a row   */
+
+			if (((i + 1) % 3) == 0) {
+				$("#container").append("<div style='clear:both;'>");
+			}
+		}
+
+               /*  X makes the first move   */
+		this.player = "X";
+	},
+
+	/* Called on each square click. Displays correct symbol for the clicked  */
+	/*	square, checks if the game is won or has ended in a tie. This function is for single player, two player is the next*/
+
+	clicked: function(square_id) {
+	/* See if this square is empty, if so put an X or O in it  */
+
+		if ("" == $("#" + square_id).html()) {
+			$("#" + square_id).text(this.player);
+            $("#" + square_id).css("font-size","0px")
+			if ("X" == this.player){
+				$("#" + square_id).css("background-color","#062F4F");
+			} else {
+				$("#" + square_id).css("background-color","#B82601");
+			}
+       
+	/*  Call is_game_won function to see if this move wins the game   */
+			currentplayer = this.player;
+			game_is_won = this.is_game_won(square_id);
+                       
+	/* if the game_is_won, declare victory for this.player  */
+
+			if (game_is_won) {
+	/* use setTimeout to delay confirm message so that last move is recorded  */
+	/* this is needed for some browsers and mobile devices  */
+				setTimeout(function(){TicTacToe.end_game(currentplayer);},300);
+				$("#xsn").show().delay(8000);			
+				return;}
+				
+			else
+				game_is_tied = this.is_game_tied(); /*  Check for a tie game  */
+			if (game_is_tied) {
+					 /* use setTimeout to delay confirm message so that last move is recorded  */
+			setTimeout(function(){TicTacToe.end_game();},100);
+				return;
+			}
+	/* if not won or tied, switch to the other player's move  */
+
+			this.player = (this.player == "X")? "O": "X";
+		}
+			
+	},
+
+	/* this is the double player clicked function */
+	
+	clicked_dp_1: function(square_id) {
+                /* See if this square is empty, if so put an X or O in it  */
+
+		if ("" == $('#' + square_id).html()) {
+			$("#" + square_id).text(this.player);
+            $("#" + square_id).css("font-size","0px");
+			if ("X" == this.player){
+				$("#" + square_id).css("background-color","#062F4F");
+			} else {
+				$("#" + square_id).css("background-color","#B82601");
+			}
+			
+				/*  Call is_game_won function to see if this move wins the game   */
+			currentplayer = this.player;
+			game_is_won = this.is_game_won(square_id);
+                       
+                        /* if the game_is_won, declare victory for this.player  */
+
+			if (game_is_won) {
+                         /* use setTimeout to delay confirm message so that last move is recorded  */
+                         /* this is needed for some browsers and mobile devices  */
+				setTimeout(function(){TicTacToe.end_game(currentplayer);},300);
+				/* $("#xsn").show().delay(50000);	*/ 
+				return;} else{ /*  Check for a tie game  */
+                    
+				game_is_tied = this.is_game_tied();}
+				
+			if (game_is_tied) {
+					 /* use setTimeout to delay confirm message so that last move is recorded  */
+			setTimeout(function(){TicTacToe.end_game();},100);
+				return;
+			}
+                   
+                        /* if not won or tied, switch to the other player's move  */
+			this.player = (this.player == "X")? "O": "X";
+
+	/* set the next auto step */
+			var next_sq_id = Math.floor(Math.random() * 9).toString();
+
+			while ("" != $("#" + next_sq_id).html()){
+				next_sq_id = Math.floor(Math.random() * 9).toString();
+			}
+			
+			if ("" == $("#" + next_sq_id).html()) {
+				$("#" + next_sq_id).css("font-size","0px")
+				if ("X" == this.player){
+					$("#" + next_sq_id).css("background-color","#062F4F");
+				} else {
+					$("#" + next_sq_id).css("background-color","#B82601");
+				}
+				currentplayer = this.player;
+				$("#" + next_sq_id).text(currentplayer);
+				
+					/*  Call is_game_won function to see if this move wins the game   */
+				var game_is_won_2 = this.is_game_won(next_sq_id);
+
+							/* if the game_is_won, declare victory for this.player  */
+				
+				if (game_is_won_2) {
+							 /* use setTimeout to delay confirm message so that last move is recorded  */
+							 /* this is needed for some browsers and mobile devices  */
+					setTimeout(function(){TicTacToe.end_game(currentplayer);},300);
+					/* $("#xsn").show().delay(50000);			 */
+					return;}
+					
+				else game_is_tied = this.is_game_tied(); /*  Check for a tie game  */
+				if (game_is_tied) {
+						 /* use setTimeout to delay confirm message so that last move is recorded  */
+					setTimeout(function(){TicTacToe.end_game();},100);
+					return;
+				}
+					   
+							/* if not won or tied, switch to the other player s move  */
+				this.player = (this.player == "X")? "O": "X";
+			}
+		}
+
+	},
+	
+	
+	/* Did clicking on this square result in a victory? */
+
+	is_game_won: function(s_id) {
+		var i;
+		for (i=0; i < this.winning_squares.length; i++) {
+			if (jQuery.inArray(s_id, this.winning_squares[i]) != -1) {
+				var squares = this.winning_squares[i];
+				var pattern = "";
+				for (j in squares) {
+					console.log(squares[j]);
+					pattern += $("#" + squares[j]).html();
+				}
+				setTimeout(show_pt(),2000);
+				var symbol = this.player;
+
+				
+				if (symbol + symbol + symbol == pattern) {
+					return true;
+				}
+			}
+		}
+		return false;
+	},
+
+
+
+	/* All squares filled but no winner? */
+
+	is_game_tied: function() {
+		for (i = 0; i < 9; i++) {
+			if ("" == $("#" + i).html())
+				return false;
+		}
+		return true;
+	},
+
+	/* Display message and restart if requested */
+	end_game: function(winner) {
+		winner_c = (winner == "X")? "Blue":"Red";
+		if (winner_c){
+			msg = winner_c + " won! Play again?";}
+		else{
+			msg =  "The game has ended in a tie. Play again?";}
+		restart_game = confirm(msg);
+		if (restart_game){
+			this.init();
+			$("#xsn").hide();
+		}
+	}
+	
+};
+
+</script>
+</head>
+
+<body>
+<div id="bg_play" style="display:none">
+	<div class="middle">
+    	<div style="width:624px;margin:auto">
+			<div id="container"></div></div></div></div>
+
+<button id="back_to">Back to Main Menu</button>
+<div id="frie"></div>
+<!----------------------------------------   this is the front greeting page div ---------------------------------------->
+<div id="bg_home">
+	<div class="middle w3-animate-opacity">
+        <div style="width:600px;margin:auto">
+
+            <table align="center">
+                <tr>
+                	<td></td>
+					<td class="b2">
+                        <p class="tt" style="cursor:default" title="click below to start">Wanna play some games?</p>
+					</td>
+                </tr>
+            </table>
+            <table align="center" width="100%" height="220px">
+            	<tr>
+                	<td width="50%" align="center">
+                    <div class="b1" title="tic tac toe" id="ttt"></div></td>
+					
+                    <td width="50%" align="center">
+                    <div aligh="center" class="b1" title="click for fun!" onclick="ppk_cmup()" id="ppk"></div></td>
+                </tr>
+            </table>
+        </div>
+	</div>
+</div>
+<!---------------------------------------- end of the front greeting page div     ---------------------------------------->
+<div id="xsn"></div>
+</body>
+</html>

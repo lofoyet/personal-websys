@@ -1,0 +1,243 @@
+@charset "utf-8";
+/* CSS Document */
+
+html {
+	min-width: 100%;
+	min-height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	min-width: 100%;
+	min-height: 100%;
+	margin: 0;
+	padding:0;
+}
+
+/* unvisited link */
+a:link {
+	text-decoration: none;
+	color:black;
+}
+
+/* visited link */
+a:visited {
+	text-decoration: none;
+	color:black;
+}
+
+/* mouse over link */
+a:hover {
+	text-decoration:none;
+	color:black;
+}
+a:hover #vita{
+	text-decoration:none;
+	color:black;
+}
+
+/* selected link */
+a:active {
+	text-decoration: none;
+}
+
+/************************************* this is the front greeting page div **********************************************/
+/* this is the home page icon table feature */
+.b1{
+	text-align: center;
+	color:black;
+    vertical-align:middle;
+	width: 150px;
+	height: 150px;
+	-webkit-border-radius: 75px;
+	-moz-border-radius: 75px;
+	border-radius: 75px;
+	opacity: 0.85;
+
+}
+
+
+/* this adds mouse-on opacity */
+.b1:hover{
+	opacity: 1;
+}
+
+/* this is the space between b1 */
+.b2{
+	text-align: center;
+	color:black;
+    vertical-align:middle;
+}
+
+/* this is the text on top of icons*/
+.tc{
+	font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+	font-size:20px;
+	color: #FFFFFF;
+	text-shadow: -1px 0 #434343, 0 1px #434343, 1px 0 #434343, 0 -1px #434343;
+	font-weight: 900;
+
+
+}
+
+/* this is the text in the center as greeting*/
+.tt {
+  font: 400 50px/0.8 'Great Vibes', Helvetica, sans-serif;
+  color: #fff;
+  text-shadow: 4px 4px 3px rgba(0,0,0,0.1); 
+
+}
+
+/* this is the black page in the back*/
+#bg_home{
+	display: table;
+	position: absolute;
+	background-color:black;
+	height:100%;
+	width:100%;
+}
+
+/* this set div into vertical middle*/
+#middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/********************************************* end of the front greeting page div **************************************/
+
+
+
+/************************************* this is the personal info page div **********************************************/
+/* this is background setting*/
+#bg_pi{
+	min-width: 100%;
+	min-height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: Arial;
+	font-size: 16px;
+	font-style: normal;
+	background-color: #e6f5ff;
+}
+
+/* general table setting*/
+table {
+    font-family: arial;
+    border-collapse: collapse;
+	position: relative;
+}
+
+/* left menu setting starts here */
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 180px;
+    background-color: #008ae6;
+	color: #FFFFFF;
+    height: 100%; /* Full height */
+    position: fixed; /* Make it stick, even on scroll */
+    overflow: auto; /* Enable scrolling if the sidenav has too much content */
+
+}
+
+li a {
+    color: #FFFFFF;
+	padding:0;
+    text-decoration: none;
+	text-transform: uppercase;
+	font-family: Arial;
+	letter-spacing: -1px;
+	
+}
+
+li:hover {
+    background-color: #33adff;
+}
+
+li{
+	padding:8px 16px 8px 16px;
+	margin:0;
+    display: block;
+    text-decoration: none;
+	cursor:pointer;
+}
+
+li.active{
+	background-color:#006bb3;
+}
+
+
+/* left menu setting ends here */
+
+/* Change the link color on hover */
+li a:hover {
+    background-color: #1aa3ff;
+    color: white;
+}
+
+/* here starts class objects */
+
+/* icon hover */
+#connect:hover {
+	color: white;
+}
+#connect1:hover {
+	color: white;
+}
+#connect2:hover {
+	color: white;
+}
+#connect3:hover {
+	color: white;
+}
+#connect4:hover {
+	color: white;
+}
+#connect5:hover {
+	color: white;
+}
+/************************************* here ends the personal info page div **********************************************/
+
+
+/************************************* here starts the course page CSS    **********************************************/
+
+#bg_cos{
+	margin: 0;
+	padding: 0;
+	font-family: Arial;
+	font-size: 16px;
+	font-style: normal;
+}
+
+#rcorners1 {
+    border-radius: 25px;
+    border: 2px solid #e63900;
+    padding: 20px;
+    height: 150px;
+}
+
+#rcorners2 {
+    border-radius: 25px;
+    border: 2px solid #008ae6;
+    padding: 20px;
+    height: 150px;
+}
+
+#rcorners3 {
+    border-radius: 25px;
+    border: 2px solid #cc9900;
+    padding: 20px;
+    height: 150px;
+}
+
+/************************************* here ends the course page div    **********************************************/
+
+
+/************************************* here starts the resource page CSS **********************************************/
+#ros{
+	background-image:url(4.jpg);
+	height:100%;
+}
+

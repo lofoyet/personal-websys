@@ -1,0 +1,103 @@
+@charset "utf-8";
+/* CSS Document */
+
+html {
+	min-width: 100%;
+	min-height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	min-width: 100%;
+	min-height: 100%;
+	margin: 0;
+	padding: 0;
+
+	
+}
+
+/* unvisited link */
+a:link {
+	text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+	text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+	text-decoration:none;
+}
+
+/* selected link */
+a:active {
+	text-decoration: none;
+}
+
+
+/************************************* this is the front greeting page div **********************************************/
+/* this is the home page icon table feature */
+.b1{
+	text-align: center;
+	color:black;
+    vertical-align:middle;
+	width: 150px;
+	height: 150px;
+	-webkit-border-radius: 75px;
+	-moz-border-radius: 75px;
+	border-radius: 75px;
+	opacity: 0.85;
+
+}
+
+
+/* this adds mouse-on opacity */
+.b1:hover{
+	opacity: 1;
+}
+
+/* this is the space between b1 */
+.b2{
+	text-align: center;
+	color:black;
+    vertical-align:middle;
+}
+
+/* this is the text on top of icons*/
+.tc{
+	font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+	font-size:20px;
+	color: #FFFFFF;
+	text-shadow: -1px 0 #434343, 0 1px #434343, 1px 0 #434343, 0 -1px #434343;
+	font-weight: 900;
+
+
+}
+
+/* this is the text in the center as greeting*/
+.tt {
+  font: 400 50px/0.8 'Great Vibes', Helvetica, sans-serif;
+  color: #fff;
+  text-shadow: 4px 4px 3px rgba(0,0,0,0.1); 
+
+}
+
+/* this is the black page in the back*/
+#bg_home{
+	display: table;
+	position: absolute;
+	background-color:black;
+	height:100%;
+	width:100%;
+}
+
+/* this set div into vertical middle*/
+#middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+/********************************************* end of the front greeting page div **************************************/
+

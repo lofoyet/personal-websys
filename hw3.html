@@ -1,0 +1,289 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>home</title>
+
+<link rel="stylesheet" type="text/css" href="hw3.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link href="http://fonts.googleapis.com/css?family=Arizonia" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet" type="text/css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="hw3.js"></script>
+
+<script>
+$(document).ready(function(){
+	"use strict";
+    $("#list_icon").click(function(){
+        $("#bg_home").hide();
+		$("#bg_cos").show();
+		$("#nav_bar").show();
+		$("#cos_list").addClass("active");
+    });
+    $("#resc_icon").click(function(){
+        $("#bg_home").hide();
+		$("#ros").show();
+		$("#nav_bar").show();
+		$("#ros_list").addClass("active");
+    });
+	$("#info_icon").click(function(){
+        $("#bg_home").hide();
+		$("#bg_pi").show();
+		$("#nav_bar").show();
+		$("#info_list").addClass("active");
+    });
+	$("#home_list").click(function(){
+        $("#bg_home").show();
+		$("#bg_pi").hide();
+		$("#nav_bar").hide();
+		$("#bg_cos").hide();
+		$("#ros").hide();
+		$("#cos_list").removeClass("active");
+		$("#ros_list").removeClass("active");
+		$("#info_list").removeClass("active");
+	});
+	$("#cos_list").click(function(){
+		$("#bg_pi").hide();
+		$("#bg_cos").show();
+		$("#ros").hide();
+		$("#cos_list").addClass("active");
+		$("#ros_list").removeClass("active");
+		$("#info_list").removeClass("active");
+    });
+	$("#ros_list").click(function(){
+		$("#bg_pi").hide();
+		$("#bg_cos").hide();
+		$("#ros").show();
+		$("#cos_list").removeClass("active");
+		$("#ros_list").addClass("active");
+		$("#info_list").removeClass("active");
+    });
+	$("#info_list").click(function(){
+		$("#bg_pi").show();
+		$("#bg_cos").hide();
+		$("#ros").hide();
+		$("#cos_list").removeClass("active");
+		$("#ros_list").removeClass("active");
+		$("#info_list").addClass("active");
+    });
+	$('#info_list').hover(function(){
+    	$("#jb").show()},function(){
+			 $("#jb").hide()
+	});
+	$('#jb').hover(function(){
+    	$("#jb").show()},function(){
+			 $("#jb").hide()
+	});
+});
+</script>
+
+</head>
+
+<body onload="startTime()">
+
+<!----------------------------------------   this is the front greeting page div ---------------------------------------->
+<div id="bg_home">
+	<div id="middle">
+        <div style="width:400px;margin:auto">
+            <table align="center">
+                <tr>
+					<td class="b1" background="cm.jpg" style="cursor:not-allowed" title="trespassing, be careful">				
+                        	<p class="tc" style="cursor:not-allowed">HOME</p>
+                    </td>
+					<td  width="80"></td>
+                    <td class="b1" background="class1.jpg" title="see my course list" id="list_icon">
+                        	<p class="tc">LIST</p>
+                    </td>
+                </tr>
+                
+			</table>
+            <table align="center">
+                <tr>
+                	<td></td>
+					<td class="b2">
+                        <p class="tt" style="cursor:wait" title="wait here....I am coming for you">Hi there, I'm<br />
+                        Tianpei</p>
+					</td>
+                </tr>
+            </table>
+            
+            <table align="center">
+                <tr>
+                    <td class="b1" background="bz.jpg" style="cursor:help" title="see my portfolio" id="info_icon">
+                        	<p class="tc">INFO</p>
+                    </td>
+                    <td width="80"></td>
+                    <td class="b1" background="res.jpg" style="cursor:zoom-in;" title="click for fun!" id="resc_icon">
+                        	<p class="tc">RESC</p>
+                    </td>
+            
+                </tr>
+            </table>
+        </div>
+	</div>
+</div>
+<!---------------------------------------- end of the front greeting page div     ---------------------------------------->
+
+<!----------------------------------------- beginning of the navigation bar ---------------------------------------->
+<div id="nav_bar" style="display:none">
+    <ul class="nb">
+        <li id="home_list"><a><i class="fa fa-compass"></i> Home page</a></li>
+        <li id="info_list"><a><i class="fa fa-heart"></i> Personal info</a></li>
+        <li id="jb" style="display:none"><a><i class="fa fa-heart"></i> JI BO</a></li>
+        <li id="cos_list"><a><i class="fa fa-book"></i> List of courses</a></li>
+        <li id="ros_list"><a><i class="fa fa-cubes"></i> Resources</a></li>
+    </ul>
+</div>
+
+<!----------------------------------------- beginning of the information page div ---------------------------------------->
+
+<div id="bg_pi" style="display:none">
+<div style="margin-left:180px;width:calc(100% - 180px);">
+<!-- this is the header -->
+    <div style="padding:70px;color:#FFFFFF;background-color:#002e4d;height:200px">
+            <p style="font-size:50px;font-weight: bold;margin-bottom:15px">Tianpei Liu</p>
+            <div style="height:3px;width:85px;background-color:#99d6ff"></div>
+            <p style="font-size:20px;margin-top:15px;font-family:Palatino Linotype;">Data Analyst</p>
+     </div>
+<!-- lower part -->
+	<table style="width:100%;">
+  		<tr>
+        	<td valign="top" style="width:60%;padding:35px;font-size:20px">
+    			<div style="padding:35px;line-height: 2;background-color:#FFFFFF">
+                    <p>My name is Tianpei Liu, I joined New York University as a master student in economics department. I enjoy meeting new people and finding ways to help them have an uplifting experience. I worked as a research assistant in <a href="http://casseng.cssn.cn/" target="_blank" title="workplace">
+                    CASS</a> before. <a href="http://english.pku.edu.cn/" target="_blank" title="see my school">
+                    Peking Univeristy(北京大学)</a> is where I received my college degree. She is very <a href="http://www.smartinternchina.com/resources/internship-resources/236-education-in-china" target="_blank" title="see pictures">
+                    beautiful</a> and prestigious.</p>
+                    <div id="txt" style="text-decoration:underline;"></div>
+                    <p>I am a huge fan of LeBron James and Cleveland Cavaliers, before this, I am a big fan of Steve Nash. If you happen to share the same love with me, let's enjoy NBA together!</p>
+    
+    				<p><b><a href="https://www.reddit.com/r/nba" title="NBA?NFL?">
+						Come and watch together</a></b></p>
+    				<p> At the same time, I am interested in doing analysis in R and Python, with a lot of statistical techniques.</p>
+    
+					<p><b><a href="https://github.com/youhealthy" title="Python?R?">
+						Come and code together</a></b></p>
+     			</div>
+    		</td>
+    		<td style="width:40%;padding:35px">
+    			<div style="background-color:#006bb3;font-family:Impact;font-size:16px">
+					<img border="0" alt="I am down, click to see more" src="1.jpg" style="max-width:100%;max-height:100%;width:auto;height:auto">
+        		<br />
+        			<div style="color:#bfbfbf;font-size:26px;padding-right:35px;padding-left:35px;padding-top:20px;padding-bottom:35px">
+        				<p style="color:white;font-family:Helvetica;font-weight:bold" title="New York!">CONTACT</p> 
+               
+						<a href="https://www.linkedin.com/in/liutianpeitonynyu" target="_blank">
+                        <font style="color:#bfbfbf;"><i id="connect" class="fa fa-linkedin" aria-hidden="true"></i></font></a>  
+                        &nbsp&nbsp&nbsp
+                        <a href="tl1848@nyu.edu" target="_blank">
+                        <font style="color:#bfbfbf;"><i id="connect1" class="fa fa-envelope" aria-hidden="true"></i></font></a>
+                        &nbsp&nbsp&nbsp
+                        <a href="http://econ.as.nyu.edu/page/home" target="_blank">
+                        <font style="color:#bfbfbf;"><i id="connect2" class="fa fa-location-arrow" aria-hidden="true"></i></font></a>
+                        &nbsp&nbsp&nbsp
+                        <a href="resume-2016c-TianpeiLiu.pdf" target="_blank" id="vita">
+                        <font style="color:#bfbfbf;"><p id="connect3" style="display:inline">Vita</p></font>
+                        </a>
+                        &nbsp&nbsp&nbsp
+                        <font style="color:#bfbfbf;"><i id="connect4" class="fa fa-twitter" aria-hidden="true"></i></font>
+                        &nbsp&nbsp&nbsp
+                        <font style="color:#bfbfbf;"><i id="connect5" class="fa fa-facebook-square" aria-hidden="true"></i></font>
+                        <br>
+                    </div>
+				</div>
+			</td>
+		</tr>
+  	</table>
+</div>
+</div>
+<!---------------------------------------------- the info page ends here ----------------------------------------------->
+
+
+
+
+
+<!---------------------------------------------- the course page starts here ----------------------------------------------->
+<div id="bg_cos" style="display:none">
+	<div style="margin-left:180px;padding:45px">
+		<div id="rcorners2">
+    		<table>
+    			<tr>
+        			<td width="30%">
+        				<a href="http://pages.stern.nyu.edu/~nwhite/DealingwithdataUG.pdf" title="to see syllabus">
+        				<u><strong><font style="font-size:20;color:#008ae6">Dealing with Data</font></strong></u><br></a><br>
+        				<img border="0" alt="I am down, click to see more" src="data.jpg" width="150" height="87" class="">
+        			</td>
+        
+        			<td>
+         			Data acquisition, data cleaning and formatting, common data formats, data representation and storage, data transformations, data base management systems, “big data” or nosql solutions for storing and analyzing data, common analysis tools including excel, sas and matlab, data mining and data visualization.<br><br>
+         				<a href="http://www.forbes.com/sites/gilpress/2013/05/28/a-very-short-history-of-data-science/#3a0f460469fd" title="on history of data science">
+        				<u><strong><font style="font-size:16;color:#66c2ff">More info</font></strong></u><br></a>
+        
+        			</td>
+    			</tr>
+            </table>
+		</div>
+
+		<div id="rcorners1" style="margin-top:30px">
+    		<table>
+    			<tr>
+        			<td width="30%">
+        				<a href="https://davidrosenberg.github.io/ml2015/#home" title="to see home site">
+        				<u><strong><font style="font-size:20;color:#e63900">Machine Learning</font></strong></u><br></a><br>
+        				<img border="0" alt="I am down, click to see more" src="https://d3f1iyfxxz8i1e.cloudfront.net/courses/course_image/acfef71ed1b2.jpg" width="150" height="87" class="">
+        			</td>
+        
+        			<td>
+         				This course covers a wide variety of topics in machine learning and statistical modeling. While mathematical methods and theoretical aspects will be covered, the primary goal is to provide students with the tools and principles needed to solve both the traditional and the novel data science problems found in practice. This course will also serve as a foundation on which more specialized courses and further independent study can build.<br><br>
+         				<a href="https://www.toptal.com/machine-learning/machine-learning-theory-an-introductory-primer" title="Visual Tutorial with Examples">
+        				<u><strong><font style="font-size:16;color:#ff6633">More info</font></strong></u><br></a>
+        
+        			</td>
+    			</tr>
+            </table>
+		</div>
+
+		<div id="rcorners3" style="margin-top:30px">
+			<table> 
+    			<tr>
+        			<td width="30%">
+        				<a href="Appl Sta 2.docx" title="to see syllabus">
+       					<u><strong><font style="font-size:20;color:#cc9900">Applied Statistics &amp; Econometrics</font></strong></u><br></a><br>
+        				<img border="0" alt="I am down, click to see more" src="http://www.vspsedu.com/wp-content/uploads/2014/07/econometrics1.jpg" width="150" height="87" class="">
+        			</td>
+        
+        			<td>
+        During the first half of the semester, the course will cover models for panel data analysis and modern, non-regression based estimation frameworks, including maximum likelihood estimation, simulation techniques, classification and bayesian estimation and inference. During second half of the semester, the course will cover selected topics in modern micro, macro and financial econometrics. <br /><br />
+         			<a href="http://www.imf.org/external/pubs/ft/fandd/basics/econometric.htm" title="hear facts from IMF!">
+        			<u><strong><font style="font-size:16;color:#808000">More info</font></strong></u><br></a>
+        
+        		</td>
+    		</tr>
+        </table>
+	</div>
+
+
+
+</div>
+
+</div>
+<!---------------------------------------------- the course page ends here ----------------------------------------------->
+
+
+
+
+<!---------------------------------------------- the resource page starts here ----------------------------------------------->
+
+<div id="ros" style="display:none">
+	<div style="margin-left:180px">
+    	<a href="https://www.timeout.com/newyork/events-calendar/october-events-calendar" title="hh" style="margin-left:180px">what to do in NYC?</a><br>
+    
+    	<iframe width="420" height="315" src="https://www.youtube.com/embed/uOeqQyCeNuI">
+    	</iframe>
+	</div>
+</div>
+
+<!---------------------------------------------- the resource page ends here ----------------------------------------------->
+</body>
+</html>
